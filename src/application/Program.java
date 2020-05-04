@@ -6,7 +6,10 @@ public class Program {
 		
 
 	}
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> 604706ffefef7a3431f92079271860a3b360249f
 
 }
