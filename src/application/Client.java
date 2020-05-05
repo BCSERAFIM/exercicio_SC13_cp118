@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Client {
 	
-	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private String name;
 	private String email;
@@ -23,14 +23,6 @@ public class Client {
 	}
 
 
-
-	public SimpleDateFormat getSdf() {
-		return sdf;
-	}
-
-	public void setSdf(SimpleDateFormat sdf) {
-		this.sdf = sdf;
-	}
 
 	public String getName() {
 		return name;
@@ -56,7 +48,14 @@ public class Client {
 		this.birthDate = birthDate;
 	}
 
-
+	public String toString() {
+		
+	return name
+			+ " ( "
+			+ sdf.format(birthDate)
+			+" ) - "
+			+email;		
+	}
 	
 	
 }

@@ -6,13 +6,11 @@ public class OrderItem {
 	
 	private Integer quantity;
 	private Double price;
+	
+	
 	private Product product;
-	
-	public OrderItem() {
-		
-	}
 
-	
+
 	public OrderItem(Integer quantity, Double price, Product product) {
 		
 		this.quantity = quantity;
@@ -20,7 +18,6 @@ public class OrderItem {
 		this.product = product;
 	}
 
-	
 
 	public Integer getQuantity() {
 		return quantity;
@@ -50,17 +47,26 @@ public class OrderItem {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-
-
-	public Double subTotal() {
-				
+	
+	
+	public double subTotal() {
+		
 		return price * quantity;
-				
+		
 	}
 	
-<<<<<<< HEAD
-	
-=======
->>>>>>> 604706ffefef7a3431f92079271860a3b360249f
 
+	public String toString() {
+		return product.getName()
+				+", $"
+				+ String.format("%.2f", price)
+				+ ", Quantity: "
+				+ quantity
+				+", Subtotal: $"
+				+ String.format("%2.f", subTotal());
+		
+	}
+	
+	
+	
 }
