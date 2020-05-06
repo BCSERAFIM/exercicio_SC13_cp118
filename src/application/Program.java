@@ -2,23 +2,26 @@ package application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Client;
 import entities.Order;
 import entities.OrderItem;
+import entities.Product;
 import entities_enuns.OrderStatus;
+
 
 public class Program {
 
+	
 	public static void main(String[] args) throws ParseException {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
 		
 		
 		System.out.println("Enter cliente data: ");
@@ -31,7 +34,7 @@ public class Program {
 		Date birthDate = sdf.parse(sc.next());
 		
 		
-		Client client = new Client (name,email,birthDate);
+		Client client = new Client(name,email,birthDate);
 		
 		
 		
@@ -63,7 +66,7 @@ public class Program {
 			int quantity = sc.nextInt();
 			
 			
-			OrderItem ordemItem = new OrderItem(quantity, productPrice, product);
+			OrderItem ordemItem = new OrderItem(quantity, product);
 			order.addItem(ordemItem);
 			
 			}
@@ -71,7 +74,8 @@ public class Program {
 		System.out.println();
 		System.out.println("Order Summary: ");
 		System.out.println(order);
-	
+		
+		
 		
 		sc.close();
 			

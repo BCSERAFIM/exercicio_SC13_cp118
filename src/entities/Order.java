@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import application.Client;
 import entities_enuns.OrderStatus;
 
 
@@ -17,7 +16,7 @@ public class Order {
 	private OrderStatus status;
 	
 	private Client client;
-	private List<OrderItem> items = new ArrayList<>();
+	private static List<OrderItem> items = new ArrayList<>();
 
 		
 	
@@ -61,9 +60,11 @@ public class Order {
 	}
 
 
+
 	public List<OrderItem> getItems() {
 		return items;
 	}
+
 
 
 
@@ -102,12 +103,10 @@ public class Order {
 		sb.append(status + "\n");
 		sb.append("Client: ");
 		sb.append(client + "\n");
-		sb.append("Order itens: \n");
-		for(OrderItem item: items) {
-			sb.append(item + "\n");
+		sb.append("Ordem items: ");
+		for (OrderItem item : items) {
+			sb.append(item+"\n");
 		}
-		sb.append("Total price: $");
-		sb.append(String.format("%.2f", total()));
 		return sb.toString();
 				
 	}
